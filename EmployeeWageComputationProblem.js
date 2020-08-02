@@ -28,4 +28,4 @@ switch(employee_Check) {
 	empWage = empHrs * EMP_RATE_PER_HOUR;
 	totalWage += empWage;
 }
-console.log("Employee wage is" + " " +empWage);
+console.log("Employee wage is" + " " +totalWage);
