@@ -5,13 +5,17 @@ let EMP_RATE_PER_HOUR = 20;
 
 let empHrs = 0;
 let empWage = 0;
-
 let employee_Check = Math.floor( Math.random() * 10 ) % 3;
-if( employee_Check == IS_PART_TIME )
-	empHrs = 4;
-else if( employee_Check == IS_FULL_TIME )
-	empHrs = 8;
-else
-	empHrs = 0;
+
+switch(employee_Check) {
+	case IS_PART_TIME:
+		empHrs = 4;
+		break;
+	case IS_FULL_TIME:
+		empHrs = 8;
+		break;
+	default:
+		empHrs = 0;
+}
 empWage = empHrs * EMP_RATE_PER_HOUR;
 console.log("Employee wage is" + " " +empWage);
