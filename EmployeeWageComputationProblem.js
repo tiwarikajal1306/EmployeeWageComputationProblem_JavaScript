@@ -9,7 +9,7 @@ let empWage = 0;
 let totalEmpHrs = 0;
 let totalWage = 0;
 let totalWorkingDays = 0;
-let empDailyWage = new Array();
+let empDailyWage = new Map();
 
 function getWorkingHours (employee_Check) {
  switch(employee_Check) {
@@ -36,9 +36,9 @@ while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays <= NUMBER_OF_WORKING_
 	totalWorkingDays++;
        	let employee_Check = Math.floor( Math.random() * 10 ) % 3;
 	empHrs = getWorkingHours(employee_Check);
-	empDailyWage.push(calcDailyWage(empHrs));
 	totalEmpHrs += empHrs;
+	empDailyWage.set(totalWorkingDays, calcDailyWage(empHrs));
 }
 totalEmpWage = totalEmpHrs * EMP_RATE_PER_HOUR;
 console.log("Employee wage is" + " " +totalEmpWage);
-console.log("Employee Daily Wage is" + " " +empDailyWage);
+console.log(empDailyWage);
